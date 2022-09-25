@@ -1,4 +1,5 @@
 from tkinter import *
+from tkinter import messagebox
 
 def suma():
     a = int(num1.get())
@@ -19,10 +20,16 @@ def producto():
     numResultado.set(c)
 
 def division():
+    #validar para capturar error en division por cero
     a = int(num1.get())
     b = int(num2.get())
-    c = a/b
-    numResultado.set(c)
+    if (b>0):
+        c = a/b
+        numResultado.set(c)
+    else:
+        messagebox.showinfo(message="No se puede dividir por cero", title="Error")
+        
+
 
 def mod():
     a = int(num1.get())
@@ -95,4 +102,3 @@ clear.grid(row=6, column=1)
 
 
 ventana.mainloop()
-
