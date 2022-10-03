@@ -30,9 +30,9 @@ lbl_NumGen = Label(frame, text="Número Generado")
 lbl_NumGen.grid(row=2,column=0)
 
 
-caja_Num1 = Spinbox(frame, from_= 0 ,to=999)  
+caja_Num1 = Spinbox(frame, from_= 0 ,to=999,state="readonly")  
 caja_Num1.grid(row=0,column=1)
-caja_Num2 = Spinbox(frame, from_= 0 ,to= 999) 
+caja_Num2 = Spinbox(frame, from_= 0 ,to= 999,state="readonly") 
 caja_Num2.grid(row=1,column=1)
 entrada_Resultado = Entry(frame, state="readonly", textvariable=numResultado) 
 entrada_Resultado.grid(row=2,column=1)
