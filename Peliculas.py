@@ -1,11 +1,23 @@
 from tkinter import *
+from tkinter import messagebox
 
+
+
+# def Añadir():
+#     peli = peliculas.get() 
+#     lista.insert(END, peli) 
+#     peliculas.delete(0, END) 
 
 
 def Añadir():
-    peli = peliculas.get() 
-    lista.insert(END, peli) 
-    peliculas.delete(0, END) 
+    peli = peliculas.get()  #Se obtiene valor en Entry
+   #validamos el ingreso para no almacenar datos erróneos
+    if (peli.isspace() or len(peli) <= 1):
+        messagebox.showinfo(message="El nombre de la película no debe comenzar con un espacio", title="Error")
+        peliculas.delete(0, END)
+    else:
+        lista.insert(END, peli) #Se inserta en Listbox
+        peliculas.delete(0, END) #Se limpia el campo
 
 
 ventana = Tk()
@@ -36,3 +48,6 @@ boton_Pelicula.grid(row=2, column=0)
 
 
 ventana.mainloop()
+
+
+
